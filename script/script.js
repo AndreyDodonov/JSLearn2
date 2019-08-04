@@ -301,6 +301,8 @@ window.addEventListener('DOMContentLoaded', function () {
         });
     };
 
+    teamPhoto();
+
     /* CALCUTATOR */
 
     const calculator = () => {
