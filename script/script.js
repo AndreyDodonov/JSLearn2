@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', function () {
         let timerHours = document.querySelector('#timer-hours');
         let timerMinutes = document.querySelector('#timer-minutes');
         let timerSeconds = document.querySelector('#timer-seconds');
+
         function getTimeRemaining() {
             let dateStop = new Date(deadline).getTime();
             let dateNow = new Date().getTime();
@@ -22,17 +23,20 @@ window.addEventListener('DOMContentLoaded', function () {
                 useGMT = true;
             }
             return {
-                timeRemaining, hours, minutes, seconds
+                timeRemaining,
+                hours,
+                minutes,
+                seconds
             };
         }
-     
+
         function updateClock() {
             let timer = getTimeRemaining();
             timerHours.textContent = timer.hours > 9 ? timer.hours : '0' + timer.hours;
             timerMinutes.textContent = timer.minutes > 9 ? timer.minutes : '0' + timer.minutes;
             timerSeconds.textContent = timer.seconds > 9 ? timer.seconds : '0' + timer.seconds;
             if (timer.timeRemaining > 0) {
-            setTimeout(updateClock, 1000);
+                setTimeout(updateClock, 1000);
             }
         }
         setInterval(updateClock, 1000);
@@ -42,44 +46,53 @@ window.addEventListener('DOMContentLoaded', function () {
     /* menu */
 
     const toggleMenu = () => {
-        const btnMenu = document.querySelector('.menu'),
-              menu = document.querySelector('menu'),
-              closeBtn = document.querySelector('.close-btn'),
-              menuItems = menu.querySelectorAll('ul>li');
+        // const btnMenu = document.querySelector('.menu'),
+        const menu = document.querySelector('menu');
+            // closeBtn = document.querySelector('.close-btn'),
+            // menuItems = menu.querySelectorAll('ul>li');
 
-        const handlerMenu = () => {
-           menu.classList.toggle('active-menu');
-        };
+        // const handlerMenu = () => {
+        //     menu.classList.toggle('active-menu');
+        // };
 
-        btnMenu.addEventListener('click', () => {
-           handlerMenu();
-        });    
-        closeBtn.addEventListener('click', () => {
-            handlerMenu();
+        document.addEventListener('click', (event) => {
+            let target = event.target;
+            if (target.closest('.menu') || target.classList.contains('close-btn') ||
+                target.closest('menu ul>li') ||
+                (menu.classList.contains('active-menu'))) {
+                menu.classList.toggle('active-menu');
+            }
         });
 
-         menuItems.forEach((elem) => {
-            elem.addEventListener('click', handlerMenu);
-        });
+        // btnMenu.addEventListener('click', () => {
+        //    handlerMenu();
+        // });    
+        // closeBtn.addEventListener('click', () => {
+        //     handlerMenu();
+        // });
+
+        //  menuItems.forEach((elem) => {
+        //     elem.addEventListener('click', handlerMenu);
+        // });
     };
     toggleMenu();
 
     /* popup */
 
     const togglePopup = () => {
-        const popup  = document.querySelector('.popup'),
-              popupBtn = document.querySelectorAll('.popup-btn'),
-              popupClose = document.querySelector('.popup-close');
+        const popup = document.querySelector('.popup'),
+            popupBtn = document.querySelectorAll('.popup-btn'),
+            popupClose = document.querySelector('.popup-close');
 
-              popupBtn.forEach((elem) => {
-                  elem.addEventListener('click', () => {
-                      popup.style.display = 'block';
-                  });
-              });
+        popupBtn.forEach((elem) => {
+            elem.addEventListener('click', () => {
+                popup.style.display = 'block';
+            });
+        });
 
         popupClose.addEventListener('click', () => {
             popup.style.display = 'none';
-        });      
+        });
 
     };
 
