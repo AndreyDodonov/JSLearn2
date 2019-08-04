@@ -4,10 +4,10 @@
 
 I study JavaScript on [glo-academy](https://glo-academy.ru/jscript/)
 
-lesson 13.
+lesson 14.
 
-#### Parameters of document, windows and working with them
+#### Delegation
 
 
 related links:
- - [ВИЗУАЛЬНОЕ ПРЕДСТАВЛЕНИЕ СВОЙСТВ HTML ЭЛЕМЕНТА](https://codepen.io/quper24/pen/mZzMoO)
+ - [ДЕЛЕГИРОВАНИЕ](https://learn.javascript.ru/event-delegation)
