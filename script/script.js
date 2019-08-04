@@ -1,6 +1,8 @@
 window.addEventListener('DOMContentLoaded', function () {
     'use strict';
+
     /* Timer */
+
     function countTimer(deadline) {
         let useGMT = false;
         let diff = new Date().getTimezoneOffset() * 60000;
@@ -39,6 +41,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 setTimeout(updateClock, 1000);
             }
         }
+        
         setInterval(updateClock, 1000);
     }
     countTimer('5 august 2019');
@@ -46,14 +49,7 @@ window.addEventListener('DOMContentLoaded', function () {
     /* menu */
 
     const toggleMenu = () => {
-        // const btnMenu = document.querySelector('.menu'),
         const menu = document.querySelector('menu');
-            // closeBtn = document.querySelector('.close-btn'),
-            // menuItems = menu.querySelectorAll('ul>li');
-
-        // const handlerMenu = () => {
-        //     menu.classList.toggle('active-menu');
-        // };
 
         document.addEventListener('click', (event) => {
             let target = event.target;
@@ -63,17 +59,6 @@ window.addEventListener('DOMContentLoaded', function () {
                 menu.classList.toggle('active-menu');
             }
         });
-
-        // btnMenu.addEventListener('click', () => {
-        //    handlerMenu();
-        // });    
-        // closeBtn.addEventListener('click', () => {
-        //     handlerMenu();
-        // });
-
-        //  menuItems.forEach((elem) => {
-        //     elem.addEventListener('click', handlerMenu);
-        // });
     };
     toggleMenu();
 
@@ -82,19 +67,55 @@ window.addEventListener('DOMContentLoaded', function () {
     const togglePopup = () => {
         const popup = document.querySelector('.popup'),
             popupBtn = document.querySelectorAll('.popup-btn'),
-            popupClose = document.querySelector('.popup-close');
+            popupContent = document.querySelector('.popup-content');
+
+        let counter;
+
+        function step() {
+            counter++;
+            popupContent.style.top = counter * 2 + '%';
+            if (counter < 10) {
+                requestAnimationFrame(step);
+            }
+        }
+
+        function isMobile() {
+            return navigator.userAgent.match(
+                /Android|iPhone|iPad|iPod|kindle|Tablet|BlackBerry|mobile|Windows Phone|Opera Mini/i
+            );
+        }
 
         popupBtn.forEach((elem) => {
             elem.addEventListener('click', () => {
-                popup.style.display = 'block';
+                if (!isMobile()) {
+                    popupContent.style.top = '-100%';
+                    popup.style.display = 'block';
+                    requestAnimationFrame(step);
+                    counter = -80;
+                } else {
+                    popup.style.display = 'block';
+                }
             });
         });
 
-        popupClose.addEventListener('click', () => {
-            popup.style.display = 'none';
+        popup.addEventListener('click', (event) => {
+            let target = event.target;
+            if (target.classList.contains('popup-close')) {
+                popup.style.display = 'none';
+            } else {
+                target = target.closest('.popup-content');
+                if (!target) {
+                    popup.style.display = 'none';
+                }
+            }
         });
-
     };
 
     togglePopup();
+
+
+
+
+
+
 });
