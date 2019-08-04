@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 setTimeout(updateClock, 1000);
             }
         }
-        
+
         setInterval(updateClock, 1000);
     }
     countTimer('5 august 2019');
@@ -110,6 +110,41 @@ window.addEventListener('DOMContentLoaded', function () {
             }
         });
     };
+
+    function scrollToTarget(targetSelector){
+        if (targetSelector.length === 1 || document.querySelector(targetSelector) == null ){
+            return;
+        }
+        const targetY = document.querySelector(targetSelector).getBoundingClientRect().top;
+        const startY =  window.pageYOffset;
+        const totalDiffY = Math.abs(targetY - startY);
+        const startTime = Date.now();
+        const dir = targetY > startY ? 1 : -1;
+        const pxInMs = 2;
+    
+        const animationFrame= function(){
+            const diffTime = Date.now() - startTime;
+            const diffY = diffTime * pxInMs;
+            const y = startY + dir * diffY;
+            window.scrollTo(0,y);
+            if ( diffY < totalDiffY){
+                requestAnimationFrame(animationFrame);
+            } else {
+                window.scrollTo(0, targetY);
+            }
+        };
+        requestAnimationFrame(animationFrame); 
+    }   
+    
+    document.addEventListener('click',(event)=>{
+        let target = event.target.closest('a');
+        if (target && target.getAttribute('href').startsWith('#')){
+            event.preventDefault();
+            scrollToTarget(target.getAttribute('href'));
+        }
+    });
+
+
 
     togglePopup();
 
