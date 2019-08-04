@@ -4,10 +4,14 @@
 
 I study JavaScript on [glo-academy](https://glo-academy.ru/jscript/)
 
-lesson 14.
+lesson 15.
 
-#### Delegation
+#### Work with attributes. Data attributes. Regexps
 
 
 related links:
- - [ДЕЛЕГИРОВАНИЕ](https://learn.javascript.ru/event-delegation)
+ - [HTML атрибуты](https://html5book.ru/html-attributes/)
+ - [сервис для проверки регулярных выражений](https://regexr.com)
+ - [сервис для визуализации регулярок](https://regexper.com)
+ - [и еще один классный сервис](https://uiregex.com/ru)
+ - [подробная статья про регулярные выражения](https://tuhub.ru/frontend/js-regexp)
