@@ -4,14 +4,14 @@
 
 I study JavaScript on [glo-academy](https://glo-academy.ru/jscript/)
 
-lesson 15.
+lesson 17.
 
 #### Work with attributes. Data attributes. Regexps
 
 
 related links:
- - [HTML атрибуты](https://html5book.ru/html-attributes/)
- - [сервис для проверки регулярных выражений](https://regexr.com)
- - [сервис для визуализации регулярок](https://regexper.com)
- - [и еще один классный сервис](https://uiregex.com/ru)
- - [подробная статья про регулярные выражения](https://tuhub.ru/frontend/js-regexp)
+ - [JSON](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Объекты/JSON)
+ - [AJAX](https://habr.com/ru/post/14246/)
+ - [Заголовки HTTP](https://ru.wikipedia.org/wiki/Заголовки_HTTP)
+ - [FormData](https://developer.mozilla.org/ru/docs/Web/API/FormData/Using_FormData_Objects)
+

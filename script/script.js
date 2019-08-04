@@ -371,5 +371,104 @@ window.addEventListener('DOMContentLoaded', function () {
 
     calculator();
 
+    /* SEND FORM AJAX */
+
+    const sendForm = () => {
+        const errorMessage = 'Что-то пошло не так',
+            loadMessage = 'Загрузка...',
+            successMessage = 'Спасибо! Мы с вами свяжемся',
+            formHeader = document.getElementById('form1'),
+            formFooter = document.getElementById('form2'),
+            formPopup = document.getElementById('form3'),
+            statusMessage = document.createElement('div');
+        statusMessage.style.cssFloat.cssText = 'font-size: 2rem';
+        let form;
+
+        document.body.addEventListener('submit', (event) => {
+            if (event.target === formHeader) {
+                form = formHeader;
+            }
+            if (event.target === formFooter) {
+                form = formFooter;
+            }
+            if (event.target === formPopup) {
+                form = formPopup;
+                form.style.color = 'white';
+            }
+
+            event.preventDefault();
+            form.appendChild(statusMessage);
+            const formData = new FormData(form);
+            let body = {};
+            for (let val of formData.entries()) {
+                body[val[0]] = val[1];
+            }
+
+            postData(body,
+                () => {
+                    statusMessage.innerHTML = '<img src="./images/Commons-emblem-success.svg">';
+                },
+                () => {
+                    statusMessage.innerHTML = '<img src="./images/error-icon.png">';
+                });
+        });
+
+        const postData = (body, outputData, errorData) => {
+            const request = new XMLHttpRequest();
+            request.addEventListener('readystatechange', () => {
+                statusMessage.textContent = loadMessage;
+                if (request.readyState !== 4) {
+                    return;
+                }
+                if (request.status === 200) {
+                    outputData();
+                    form.querySelectorAll('input').forEach(item => item.value = '');
+                } else {
+                    errorData(request.status);
+                }
+            });
+            request.open('POST', './server.php');
+            request.setRequestHeader('Content-Type', 'application/json');
+            request.send(JSON.stringify(body));
+        };
+    };
+
+    sendForm();
+
+    /* VALIDATION */
+
+    const getValidUserData = () => {
+        const userName = document.querySelectorAll('[name=user_name]');
+
+        userName.forEach(item => {
+            item.addEventListener('input', (event) => {
+                const target = event.target;
+                target.value = target.value.replace(/[^а-яё ]/gi, '');
+            });
+        });
+
+        const userPhone = document.querySelectorAll('[name=user_phone]');
+        userPhone.forEach(item => {
+            item.addEventListener('input', (event) => {
+                const target = event.target;
+                target.value = target.value.replace(/[^0-9+]/i, '');
+                target.value = target.value.replace(/(.)\+/i, '$1');
+            });
+        });
+
+        const userMessage = document.querySelectorAll('[name=user_message]');
+        userMessage.forEach(item => {
+            item.addEventListener('input', (event) => {
+                const target = event.target;
+                target.value = target.value.replace(/[^а-яё ]/gi, '');
+            });
+        });
+    };
+
+    getValidUserData();
+
+
+
+
 
 });
