@@ -4,14 +4,10 @@
 
 I study JavaScript on [glo-academy](https://glo-academy.ru/jscript/)
 
-lesson 12.
+lesson 13.
 
-#### Scripts and Runtime
-
-##### setTimeout, setInterval и requestAnimationFrame
-
-##### Object Date
+#### Parameters of document, windows and working with them
 
 
 related links:
- - [requestAnimationFrame](https://html5.by/blog/what-is-requestanimationframe/)
+ - [ВИЗУАЛЬНОЕ ПРЕДСТАВЛЕНИЕ СВОЙСТВ HTML ЭЛЕМЕНТА](https://codepen.io/quper24/pen/mZzMoO)
