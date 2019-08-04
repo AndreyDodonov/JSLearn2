@@ -212,14 +212,14 @@ window.addEventListener('DOMContentLoaded', function () {
         };
 
         const autoPlaySlide = () => {
-              prevSlide(slide, currentSlide, 'portfolio-item-active');
-              prevSlide(dot, currentSlide, 'dot-active');
-              currentSlide++;
-              if (currentSlide == slide.length) {
-                  currentSlide = 0;
-              }
-              nextSlide(slide, currentSlide, 'portfolio-item-active');
-              nextSlide(dot, currentSlide, 'dot-active');
+            prevSlide(slide, currentSlide, 'portfolio-item-active');
+            prevSlide(dot, currentSlide, 'dot-active');
+            currentSlide++;
+            if (currentSlide == slide.length) {
+                currentSlide = 0;
+            }
+            nextSlide(slide, currentSlide, 'portfolio-item-active');
+            nextSlide(dot, currentSlide, 'dot-active');
         };
 
         const startSlide = (time = 3000) => {
@@ -275,7 +275,46 @@ window.addEventListener('DOMContentLoaded', function () {
 
     slider();
 
-    
+    /* OUR TEAM */
+
+    const teamPhoto = () => {
+        const blockTeam = document.querySelector('.command');
+
+        function getChangeImg(target) {
+            let getChangedItem = target.src;
+            target.src = target.dataset.img;
+            target.dataset.img = getChangedItem;
+        }
+
+        blockTeam.addEventListener('mouseover', (event) => {
+            const target = event.target;
+            if (target.matches('.command__photo')) {
+                getChangeImg(target);
+            }
+        });
+
+        blockTeam.addEventListener('mouseout', (event) => {
+            const target = event.target;
+            if (target.matches('.command__photo')) {
+                getChangeImg(target);
+            }
+        });
+    };
+
+    /* CALCUTATOR */
+
+    const calculator = () => {
+        const calc = document.querySelector('.calc-block');
+
+        calc.addEventListener('input', (event) => {
+            const target = event.target;
+            if (target.matches('input.calc-item')) {
+                target.value.replace(/[^\d]/g, '');
+            }
+        });
+    };
+
+    calculator();
 
 
 });
