@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', function () {
             let dateNow = new Date().getTime();
             let timeRemaining = +(dateStop - dateNow) / 1000;
             if (useGMT) {
-                // getGTMTime(dateStop, dateNow);
                 dateNow = new Date().getTime() + diff;
                 dateStop = new Date(dateNow).setHours(24, 0, 0);
             }
@@ -26,9 +25,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 timeRemaining, hours, minutes, seconds
             };
         }
-        // function getGTMTime(dateStop, dateNow) {
-        //     return;
-        // }
+     
         function updateClock() {
             let timer = getTimeRemaining();
             timerHours.textContent = timer.hours > 9 ? timer.hours : '0' + timer.hours;
@@ -38,7 +35,6 @@ window.addEventListener('DOMContentLoaded', function () {
             setTimeout(updateClock, 1000);
             }
         }
-        //updateClock();
         setInterval(updateClock, 1000);
     }
     countTimer('5 august 2019');
