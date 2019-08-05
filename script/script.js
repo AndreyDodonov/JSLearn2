@@ -406,10 +406,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
             postData(body,
                 () => {
-                    statusMessage.innerHTML = '<img src="./images/Commons-emblem-success.svg">';
+                    statusMessage.innerHTML = '<img src=".images/successImg.svg">';
                 },
                 () => {
-                    statusMessage.innerHTML = '<img src="./images/error-icon.png">';
+                    statusMessage.innerHTML = '<img src="./images/errorImg.svg">';
                 });
         });
 
