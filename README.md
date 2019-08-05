@@ -4,15 +4,18 @@
 
 I study JavaScript on [glo-academy](https://glo-academy.ru/jscript/)
 
-lesson 19.
+lesson 20.
 
-#### Fetch
+#### Modules in JS
 
 
 
 related links:
- - [FETCH MDN](https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch)
- - [РУКОВОДСТВО ПО FETCH API](http://jem-space.ru/praktichieskoie-es6-rukovodstvo-o-tom-kak-sdielat-http-zapros-s-pomoshchiu-fetch-api/)
+ - [Модули ES6](https://frontender.info/es6-modules/)
+ - [Еще о Модулях](https://medium.com/web-standards/es-modules-cartoon-dive-71f42c1e851a)
+ - [Browserify](http://browserify.org)
+ - [Webpack](https://webpack.js.org)
+ - [Babel](https://babeljs.io)
 
 
 
