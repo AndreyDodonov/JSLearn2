@@ -4,16 +4,15 @@
 
 I study JavaScript on [glo-academy](https://glo-academy.ru/jscript/)
 
-lesson 18.
+lesson 19.
 
-#### Asynchronous JavaScript. Promise
+#### Fetch
 
-##### Execution context, asynchronous execution, call stack and event loop
 
 
 related links:
- - [КАК РАБОТАЕТ JAVASCRIPT](https://habr.com/ru/company/ruvds/blog/337042/)
- - [JSONPLACEHOLDER ДЛЯ ПРАКТИКИ](https://jsonplaceholder.typicode.com)
- - [ПРОМИСЫ НА ПРИМЕРЕ БУРГЕР-ВЕЧЕРИНКИ](https://pcnews.ru/blogs/%5Bperevod%5D_promisy_na_primere_burger_vecerinki-755844.html)
+ - [FETCH MDN](https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch)
+ - [РУКОВОДСТВО ПО FETCH API](http://jem-space.ru/praktichieskoie-es6-rukovodstvo-o-tom-kak-sdielat-http-zapros-s-pomoshchiu-fetch-api/)
+
 
 
