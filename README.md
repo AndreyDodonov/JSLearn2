@@ -4,14 +4,16 @@
 
 I study JavaScript on [glo-academy](https://glo-academy.ru/jscript/)
 
-lesson 17.
+lesson 18.
 
-#### Work with attributes. Data attributes. Regexps
+#### Asynchronous JavaScript. Promise
+
+##### Execution context, asynchronous execution, call stack and event loop
 
 
 related links:
- - [JSON](https://developer.mozilla.org/ru/docs/Learn/JavaScript/Объекты/JSON)
- - [AJAX](https://habr.com/ru/post/14246/)
- - [Заголовки HTTP](https://ru.wikipedia.org/wiki/Заголовки_HTTP)
- - [FormData](https://developer.mozilla.org/ru/docs/Web/API/FormData/Using_FormData_Objects)
+ - [КАК РАБОТАЕТ JAVASCRIPT](https://habr.com/ru/company/ruvds/blog/337042/)
+ - [JSONPLACEHOLDER ДЛЯ ПРАКТИКИ](https://jsonplaceholder.typicode.com)
+ - [ПРОМИСЫ НА ПРИМЕРЕ БУРГЕР-ВЕЧЕРИНКИ](https://pcnews.ru/blogs/%5Bperevod%5D_promisy_na_primere_burger_vecerinki-755844.html)
+
 
