@@ -404,13 +404,11 @@ window.addEventListener('DOMContentLoaded', function () {
                 body[val[0]] = val[1];
             }
 
-            postData(body,
-                () => {
-                    statusMessage.innerHTML = '<img src=".images/successImg.svg">';
-                },
-                () => {
-                    statusMessage.innerHTML = '<img src="./images/errorImg.svg">';
-                });
+            postData(body)
+            .then( result =>{
+             statusMessage.innerHTML = '<img src="./images/successImg.svg">';})
+                .catch(() =>{
+                    statusMessage.innerHTML = '<img src="./images/errorImg.svg">'; });
         });
 
         const postData = (body, outputData, errorData) => {
