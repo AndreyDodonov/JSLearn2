@@ -381,7 +381,7 @@ window.addEventListener('DOMContentLoaded', function () {
             formFooter = document.getElementById('form2'),
             formPopup = document.getElementById('form3'),
             statusMessage = document.createElement('div');
-        statusMessage.style.cssFloat.cssText = 'font-size: 2rem';
+        statusMessage.style.cssText = 'font-size: 2rem';
         let form;
 
         document.body.addEventListener('submit', (event) => {
