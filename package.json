@@ -4,7 +4,8 @@
   "description": "![learn project](https://img.shields.io/badge/Learn-learn%20project-orange.svg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --open --mode=development",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,21 @@
   },
   "homepage": "https://github.com/AndreyDodonov/JSLearn2#readme",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.6",
+    "path": "^0.12.7",
     "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "babel-polyfill": "^6.26.0",
+    "element-closest": "^3.0.1",
+    "fetch-polyfill": "^0.8.2",
+    "formdata-polyfill": "^3.0.19",
+    "nodelist-foreach-polyfill": "^1.2.0"
   }
 }

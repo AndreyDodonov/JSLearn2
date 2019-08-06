@@ -1,5 +1,16 @@
 'use strict';
 
+/* polifills */
+import "@babel/polyfill";
+import 'nodelist-foreach-polyfill';
+import elementClosest from 'element-closest';
+elementClosest(window); // не самовызывающийся полифил
+import 'formdata-polyfill';
+import 'fetch-polyfill';
+
+
+/* imports */
+
 import countTimer from './modules/countTimer';
 import toggleMenu from './modules/toggleMenu';
 import togglePopup from './modules/popup';
